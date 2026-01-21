@@ -1,0 +1,8 @@
+site_name: Python Static Site (MkDocs) on GitHub Pages
+site_url: https://vinichDev.github.io/simple-mkdocs-app/
+nav:
+  - Главная: index.md
+  - Отчет: report.md
+
+theme:
+  name: mkdocs
