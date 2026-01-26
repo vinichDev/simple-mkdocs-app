@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content -%}
+  <div class="container">
+    <article class="content">
+      <h1 id="not-found">Страница не найдена</h1>
+      <p>К сожалению, такой страницы нет. Вернитесь на главную и попробуйте снова.</p>
+      <p><a href="{{ nav.homepage.url | url }}">Перейти на главную</a></p>
+    </article>
+  </div>
+{%- endblock %}

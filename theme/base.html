@@ -1,15 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>
-        {% if page.title and page.title != config.site_name %}
-        {{ page.title }} · {{ config.site_name }}
-        {% else %}
-        {{ config.site_name }}
-        {% endif %}
-    </title>
+    <title>{% if page.title and page.title != config.site_name %}{{ page.title }} · {{ config.site_name }}{% else %}{{
+        config.site_name }}{% endif %}</title>
     <meta name="description" content="{{ config.site_description }}"/>
     <meta name="author" content="{{ config.site_author }}"/>
     <link rel="stylesheet" href="{{ 'css/style.css' | url }}"/>
@@ -22,25 +17,29 @@
             {{ config.site_author }}
         </a>
         <nav class="site-nav" aria-label="Главная навигация">
-            <button class="nav-toggle" type="button" aria-expanded="false">
+            <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                    aria-label="Открыть меню"
+            >
                 Меню
             </button>
-            <ul class="nav-list">
-                {% for nav_item in nav %}
+            <ul class="nav-list" id="primary-navigation">
+                {%- for nav_item in nav %}
                 <li class="nav-item">
                     <a class="nav-link{% if nav_item.active %} is-active{% endif %}" href="{{ nav_item.url | url }}">
                         {{ nav_item.title }}
                     </a>
                 </li>
-                {% endfor %}
+                {%- endfor %}
             </ul>
         </nav>
     </div>
 </header>
 
-<main class="site-main">
-    {% block content %}{% endblock %}
-</main>
+<main class="site-main">{% block content %}{% endblock %}</main>
 
 <footer class="site-footer">
     <div class="container site-footer__inner">

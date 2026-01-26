@@ -8,6 +8,9 @@ nav:
   - Отчет: report.md
   - Отчет (часть 2): report-part2.md
 
+markdown_extensions:
+  - attr_list
+
 theme:
   name: mkdocs
   custom_dir: theme

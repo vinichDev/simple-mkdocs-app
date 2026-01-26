@@ -1,4 +1,4 @@
-# Отчет (часть 2): кастомная тема MkDocs и CI/CD сборка
+# Отчет (часть 2): кастомная тема MkDocs и CI/CD сборка {#report-part2}
 
 > Репозиторий: `https://github.com/vinichDev/simple-mkdocs-app`
 >
@@ -6,7 +6,7 @@
 
 ---
 
-## 1) Результат
+## 1) Результат {#result}
 
 - Создана **собственная тема** на HTML/CSS/JS с кастомными `header` и `footer`.
 - Домашняя страница получила отдельную стилизацию (карточка с тенью и крупным заголовком).
@@ -17,7 +17,7 @@
 
 ---
 
-## 2) Структура кастомной темы
+## 2) Структура кастомной темы {#theme-structure}
 
 ```
 /theme
@@ -38,7 +38,7 @@
 
 ---
 
-## 3) PostCSS, валидация и минификация
+## 3) PostCSS, валидация и минификация {#postcss-html}
 
 Используется `postcss` + `autoprefixer` + `cssnano`.
 
@@ -55,7 +55,7 @@ npm run minify:html
 
 ---
 
-## 4) Сборка и деплой в GitHub Actions
+## 4) Сборка и деплой в GitHub Actions {#gha-deploy}
 
 Файл: `.github/workflows/deploy-pages.yml`
 
@@ -87,7 +87,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
 
       - name: Install Node dependencies
         run: npm install
@@ -136,7 +135,7 @@ jobs:
 
 ---
 
-## 5) Локальный запуск
+## 5) Локальный запуск {#local-run}
 
 ```bash
 python -m venv .venv
@@ -151,7 +150,7 @@ mkdocs serve
 
 ---
 
-## 6) Итоги
+## 6) Итоги {#summary}
 
 - Сайт доступен на GitHub Pages.
 - В CI добавлены PostCSS, HTML-валидация и минификация.
