@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        {% if page.title and page.title != config.site_name %}
+        {{ page.title }} · {{ config.site_name }}
+        {% else %}
+        {{ config.site_name }}
+        {% endif %}
+    </title>
+    <meta name="description" content="{{ config.site_description }}"/>
+    <meta name="author" content="{{ config.site_author }}"/>
+    <link rel="stylesheet" href="{{ 'css/style.css' | url }}"/>
+</head>
+<body class="page{% if page.is_homepage %} page--home{% endif %}">
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="logo" href="{{ nav.homepage.url | url }}">{{ config.site_name }}</a>
+        <a class="profile-link" href="https://github.com/vinichDev" target="_blank" rel="noopener noreferrer">
+            {{ config.site_author }}
+        </a>
+        <nav class="site-nav" aria-label="Главная навигация">
+            <button class="nav-toggle" type="button" aria-expanded="false">
+                Меню
+            </button>
+            <ul class="nav-list">
+                {% for nav_item in nav %}
+                <li class="nav-item">
+                    <a class="nav-link{% if nav_item.active %} is-active{% endif %}" href="{{ nav_item.url | url }}">
+                        {{ nav_item.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="site-main">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <div>
+            <strong>{{ config.site_name }}</strong>
+            <p class="footer-meta">{{ config.site_description }}</p>
+        </div>
+        <div class="footer-meta">
+            Автор:
+            <a class="profile-link" href="https://github.com/vinichDev" target="_blank" rel="noopener noreferrer">
+                {{ config.site_author }}
+            </a>
+            · <span id="year"></span></div>
+    </div>
+</footer>
+
+<script src="{{ 'js/main.js' | url }}"></script>
+</body>
+</html>

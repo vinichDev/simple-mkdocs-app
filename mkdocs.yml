@@ -1,8 +1,13 @@
 site_name: Python Static Site (MkDocs) on GitHub Pages
+site_description: Учебный сайт с кастомной темой MkDocs, сборкой и деплоем на GitHub Pages.
+site_author: VinichDev
 site_url: https://vinichDev.github.io/simple-mkdocs-app/
+
 nav:
   - Главная: index.md
   - Отчет: report.md
+  - Отчет (часть 2): report-part2.md
 
 theme:
   name: mkdocs
+  custom_dir: theme

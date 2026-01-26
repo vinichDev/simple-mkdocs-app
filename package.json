@@ -1,0 +1,17 @@
+{
+  "name": "simple-mkdocs-app",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^6.1.2",
+    "html-minifier-terser": "^7.2.0",
+    "html-validate": "^8.24.0",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0"
+  },
+  "scripts": {
+    "build:css": "postcss theme-src/style.css -o theme/css/style.css",
+    "validate:html": "html-validate 'site/**/*.html'",
+    "minify:html": "html-minifier-terser --input-dir site --output-dir site --file-ext html --collapse-whitespace --remove-comments --minify-css true --minify-js true"
+  }
+}
